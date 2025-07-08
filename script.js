@@ -57,3 +57,47 @@ document.querySelectorAll('.boxx').forEach(el => {
   }, { threshold: 0.2 });
   obs.observe(el);
 });
+
+const lines = [
+  document.querySelector('.line-tl'),
+  document.querySelector('.line-tr'),
+  document.querySelector('.line-bl'),
+  document.querySelector('.line-br')
+];
+
+const bubbles = [
+  document.querySelector('.bubble-tl'),
+  document.querySelector('.bubble-tr'),
+  document.querySelector('.bubble-bl'),
+  document.querySelector('.bubble-br')
+];
+
+const fadeTexts = document.querySelectorAll('.title4');
+
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      lines.forEach((line, i) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); 
+        }
+        setTimeout(() => {
+          line.classList.add('animate');
+
+          setTimeout(() => {
+            bubbles[i].classList.add('visible');
+          }, 1000);
+        }, i * 1200); 
+      });
+      observer.disconnect();
+    }
+  });
+});
+
+observer.observe(document.querySelector('.main4body'));
+
+fadeTexts.forEach(text => {
+  observer.observe(text);
+});

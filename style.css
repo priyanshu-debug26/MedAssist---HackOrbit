@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-
+    
     margin: 0;
 }
 
@@ -240,4 +240,160 @@ body {
     position: absolute;
     padding: 2rem;
     bottom: 0;
+}
+
+
+.main4 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+
+.main4body {
+    height: 70%;
+    width: 100%;
+    background-color: rgb(0, 129, 118);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.title4 {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.title4.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title-text {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    padding: 20px;
+    color: #1B4242;
+}
+
+.premium {
+    height: 100%;
+}
+
+.doc11 {
+    height: 70%;
+    z-index: 10;
+    position: absolute;
+    bottom: 60px;
+}
+
+.circle9 {
+    position: absolute;
+    bottom: 100px;
+    z-index: 6;
+}
+
+.linesvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.line {
+    stroke: white;
+    stroke-width: 7px;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    transition: stroke-dashoffset 3s cubic-bezier(0.18, 0, 0.25, 1.01);
+}
+
+.bubble {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    height: 110px;
+    font-size: 12px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 5;
+}
+
+.bubble-tl {
+    top: 10%;
+    left: 10%;
+}
+
+.bubble-tr {
+    top: 10%;
+    right: 10%;
+}
+
+.bubble-bl {
+    bottom: 10%;
+    left: 10%;
+}
+
+.bubble-br {
+    bottom: 15%;
+    right: 10%;
+}
+
+.line.animate {
+    stroke-dashoffset: 0;
+}
+
+.bubble.visible {
+    opacity: 1;
+}
+
+.footer4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.unlock-pre {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-style: normal;
+
+}
+
+.get-started {
+    /* position: absolute;
+    bottom: 0; */
+    background-color: #00846e;
+    color: white;
+    height: 5rem;
+    width: 15rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
