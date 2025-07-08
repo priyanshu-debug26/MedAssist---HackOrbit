@@ -56,6 +56,23 @@ body {
     z-index: 2;
 }
 
+.Log {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.mainbutton {
+    background-color: white;
+    color: black;
+    z-index: 3rem;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    /* position: absolute; */
+    top: 10px;
+}
+
 .navbar {
     position: fixed;
 
