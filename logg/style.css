@@ -1,0 +1,228 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url('Images for login/Background\ 8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+
+.login-card {
+  max-width: 480px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 48px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0.88;
+}
+
+.login-card h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.login-card input[type="text"],
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+  padding-right: 45px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 37%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #3795ff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3795ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #1f78e0;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.signup-text {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #3795ff;
+  text-decoration: none;
+}
+
+.or-divider {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.google-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.google-login:hover {
+  background: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(55, 149, 255, 0.15);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.brand-logo-topright {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  font-size: 2.7rem;
+  font-weight: bolder;
+  color: #111;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  letter-spacing: 2px;
+  user-select: none;
+  z-index: 10;
+}
+
+.brand-logo-topright-blur {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  padding: 12px 32px;
+  font-size: 2.7rem;
+  font-weight: 500;
+  color: #0697ccea;
+  background: rgba(255, 255, 255, 0.436);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.578);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  letter-spacing: 2px;
+  user-select: none;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .login-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .login-card input[type="text"],
+  .login-card input[type="password"] {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .toggle-password {
+    font-size: 12px;
+    right: 8px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .signup-text,
+  .or-divider,
+  .google-login {
+    font-size: 13px;
+  }
+
+  .brand-logo-topright,
+  .brand-logo-topright-blur {
+    font-size: 1.6rem;
+    top: 12px;
+    right: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px 16px;
+  }
+
+  .brand-logo-topright-blur {
+    font-size: 1.3rem;
+    padding: 6px 14px;
+  }
+}
