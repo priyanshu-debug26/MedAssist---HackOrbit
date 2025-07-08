@@ -182,3 +182,62 @@ body {
     font-style: normal;
     font-size: 7rem;
 }
+
+.main2 {
+    height: 100vh;
+    width: 100%;
+    background-image: url('Assets/back1.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-text {
+    font-family: "Karantina", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem;
+    color: rgb(0, 129, 118);
+    text-align: center;
+}
+
+.box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 80%;
+    gap: 3rem;
+}
+
+.box1,
+.box2,
+.box3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* background-image: url('Assets/box.svg'); */
+    background-size: cover;
+    /* border: 2px solid rgb(129, 0, 0); */
+}
+
+.boxx:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box-text {
+    position: absolute;
+    padding: 2rem;
+    bottom: 0;
+}
