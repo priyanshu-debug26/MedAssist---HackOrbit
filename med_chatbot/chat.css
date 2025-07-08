@@ -9,9 +9,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #e0f7fa, #f9fdfd);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     height: 100vh;
     color: #00332f;
 }
