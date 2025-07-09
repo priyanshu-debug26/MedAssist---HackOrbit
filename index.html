@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="animation.css" />
   <link rel="stylesheet" href="med_chatbot/chat.css" />
   <link rel="stylesheet" href="VideocallF/style2.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="maps/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
@@ -118,10 +120,12 @@
 
 
   </div>
-    <div class="footer4">
-      <div class="maps">CONNECT WITH YOUR NEAREST HOSPITALS</div>
-      <button class="get-started">Get Started</button>
-    </div>
+  <div class="footer4">
+    <div class="maps">CONNECT WITH YOUR NEAREST HOSPITALS</div>
+    <button class="get-started">Get Started</button>
+  </div>
+
+
   <div class="main5">
     <div class="main5-title">
       <h1>One on One Call with our Doctors</h1>
@@ -131,7 +135,74 @@
   </div>
 
   <div class="main6">
-    <h2>Your Content</h2>
+    <div id="theme-toggle">🌓</div>
+
+    <div id="map"></div>
+
+    <div id="sidebar" class="hidden">
+      <button id="close-sidebar">✖</button>
+      <div id="sidebar-content">
+        <h2 id="place-name">Place Name</h2>
+        <p id="place-address"></p>
+        <p id="place-distance"></p>
+        <p id="place-eta"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main7">
+    <div class="subscription-section">
+      <div class="card card-left">
+        <h2>Basic Plan</h2>
+        <p>Good for personal use with limited features.</p>
+      </div>
+      <div class="card card-center">
+        <h2>Premium Plan</h2>
+        <p>Best value with full features and priority support.</p>
+      </div>
+      <div class="card card-right">
+        <h2>Pro Plan</h2>
+        <p>Advanced tools for professionals and businesses.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="main8">
+    <div class="faqmainbox">
+
+      <div class="aboutus lastbox">
+        <div class="faq-title">About Us</div>
+        <div class="aboutus-text">MedAssist is a user-friendly web platform designed to simplify the
+          medicine-buying process. It allows users to describe their health problems in natural
+          language, and instantly recommends relevant
+          over-the-counter or prescription medicines from a curated database.Premium users also gain
+          access to direct doctor consultation and enhanced features such as delivery tracking, better
+          discounts, and faster service</div>
+      </div>
+
+      <div class="contactus lastbox">
+        <div class="faq-title">Contact Us</div>
+        <div class="contactus-text">For any queries or support,<br>
+          please reach out to us at:<br>
+          +91-123-456-XXXX or email us at support@medassist.com
+        </div>
+      </div>
+
+      <div class="FAQ lastbox">
+        <div class="faq-title">FAQ</div>
+        <div class="faq-text">
+          <div>What is MedAssist?</div>
+          <div>How does MedAssist work?</div>
+          <div>Is my data safe with MedAssist?</div>
+          <div>What should I do in case of a medical emergency?</div>
+          <div>Is video call Feature free?</div>
+          <div>what are the benefits of premium</div>
+          <div>How can I upgrade to premium?</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="copyright">© All rights Reserved</div>
   </div>
 
   <!-- Scripts -->
@@ -140,7 +211,10 @@
   <script src="VideocallF/node.js"></script>
   <script type="module" src="auth.js"></script>
   <script type="module" src="logg/logout.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="maps/script.js"></script>
+  <script type="module" src="videocallGuard.js"></script>
+  <script type="module" src="chatbotGuard.js"></script>
 </body>
 
 </html>
-
