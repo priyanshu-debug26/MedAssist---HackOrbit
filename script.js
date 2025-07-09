@@ -9,12 +9,11 @@ window.addEventListener('scroll', () => {
 });
 
 const images = [
-  'url("Assets/background1.jpg")',
-  'url("Assets/background22.png")',
-  'url("Assets/background33.jpg")',
-  'url("Assets/background44.jpeg")'
+  'url("Assets/background 01.jpeg")',
+  'url("Assets/background 02.jpeg")',
+  'url("Assets/background 03.jpeg")',
+  'url("Assets/background 04.png")',
 ];
-
 let current = 0;
 const overlay = document.querySelector('.bg-overlay');
 
@@ -100,4 +99,24 @@ observer.observe(document.querySelector('.main4body'));
 
 fadeTexts.forEach(text => {
   observer.observe(text);
+});
+
+
+let observer1;
+
+const cards = document.querySelectorAll('.card');
+
+observer1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      observer1.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+cards.forEach(card => {
+  observer1.observe(card);
 });
