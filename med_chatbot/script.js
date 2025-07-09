@@ -47,7 +47,7 @@ async function sendMessage() {
     });
 
     try {
-        const response = await fetch("med_chatbot/api/chat", {
+        const response = await fetch("/med_chatbot/api/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

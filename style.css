@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Alex+Brush&family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karantina:wght@300;400;700&family=Noto+Serif+Dives+Akuru&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    
+    margin: 0;
+}
+
+.main1 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.titlebar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space;
+    /* overflow: hidden; */
+}
+
+.v1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.medtitle {
+    font-size: 4vw;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgb(0, 129, 118);
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+}
+.Log {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.mainbutton {
+    background-color: white;
+    color: black;
+    z-index: 3rem;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    /* position: absolute; */
+    top: 10px;
+}
+
+.navbar {
+    position: fixed;
+
+    /* width: 100%; */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: end;
+    right: 50px;
+    background: transparent;
+    border-radius: 30px;
+    z-index: 11;
+    transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+    color: rgb(0, 0, 0);
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: #003fd1;
+    transition: ease-in-out 0.3s;
+}
+
+
+.main1body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.textcontent {
+    z-index: 2;
+    padding: 1rem;
+    color: black;
+}
+
+
+.line2 {
+    font-size: clamp(2rem, 8vw, 7rem);
+    color: rgb(0, 129, 118);
+    font-family: 'Aldrich', sans-serif;
+}
+
+
+.line1 {
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 1rem;
+    max-width: 90%;
+}
+
+
+.Nbutton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    z-index: 3;
+    font-size: 1.5rem;
+}
+
+.Nbutton.left {
+    left: 1rem;
+}
+
+.Nbutton.right {
+    right: 1rem;
+}
+.line2 {
+    font-family: "Aldrich", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 7rem;
+}
+
+.main2 {
+    height: 100vh;
+    width: 100%;
+    background-image: url('Assets/back1.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.services-text {
+    font-family: "Karantina", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6rem;
+    color: rgb(0, 129, 118);
+    text-align: center;
+}
+
+.box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 80%;
+    gap: 3rem;
+}
+
+.box1,
+.box2,
+.box3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* background-image: url('Assets/box.svg'); */
+    background-size: cover;
+    /* border: 2px solid rgb(129, 0, 0); */
+}
+
+.boxx:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box-text {
+    position: absolute;
+    padding: 2rem;
+    bottom: 0;
+}
+
+
+.main4 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+
+.main4body {
+    height: 70%;
+    width: 100%;
+    background-color: rgb(0, 129, 118);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.title4 {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.6s ease-out,
+        transform 0.6s ease-out;
+}
+
+.title4.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title-text {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    padding: 20px;
+    color: #1B4242;
+}
+
+.premium {
+    height: 100%;
+}
+
+.doc11 {
+    height: 70%;
+    z-index: 10;
+    position: absolute;
+    bottom: 60px;
+}
+
+.circle9 {
+    position: absolute;
+    bottom: 100px;
+    z-index: 6;
+}
+
+.linesvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.line {
+    stroke: white;
+    stroke-width: 7px;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    transition: stroke-dashoffset 3s cubic-bezier(0.18, 0, 0.25, 1.01);
+}
+
+.bubble {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    height: 110px;
+    font-size: 12px;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    z-index: 5;
+}
+
+.bubble-tl {
+    top: 10%;
+    left: 10%;
+}
+
+.bubble-tr {
+    top: 10%;
+    right: 10%;
+}
+
+.bubble-bl {
+    bottom: 10%;
+    left: 10%;
+}
+
+.bubble-br {
+    bottom: 15%;
+    right: 10%;
+}
+
+.line.animate {
+    stroke-dashoffset: 0;
+}
+
+.bubble.visible {
+    opacity: 1;
+}
+
+.footer4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.maps {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    font-style: normal;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.get-started {
+    /* position: absolute;
+    bottom: 0; */
+    background-color: #00846e;
+    color: white;
+    height: 4 rem;
+    width: 14rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.main6{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+.main6body {
+    height: 70%;
+    width: 100%;
+    background-color: rgb(0, 129, 118);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        right: 20px;
+        top: 80px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+    }
+
+    .medtitle {
+        font-size: 2.5rem;
+        left: 20px;
+    }
+
+    .line2 {
+        font-size: 3rem;
+    }
+
+    .line1 {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    .box-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .box1, .box2, .box3 {
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    .icon {
+        top: 50px;
+        height: 80px !important;
+    }
+
+    .bubble {
+        width: 200px;
+        height: auto;
+        font-size: 10px;
+    }
+
+    .unlock-pre {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .get-started {
+        width: 10rem;
+        font-size: 1rem;
+        height: 3rem;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .navbar {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .mainbutton {
+        width: 6rem;
+        font-size: 0.8rem;
+    }
+
+    .line2 {
+        font-size: 2rem;
+    }
+
+    .line1 {
+        font-size: 1rem;
+    }
+
+    .Nbutton {
+        height: 3rem;
+        width: 3rem;
+        font-size: 1rem;
+    }
+
+    .title-text {
+        font-size: 2rem;
+    }
+
+    .doc11 {
+        height: 50%;
+        bottom: 40px;
+    }
+
+    .bubble {
+        width: 150px;
+        font-size: 9px;
+        padding: 10px;
+    }
+
+    .unlock-pre {
+        font-size: 1.2rem;
+    }
+
+    .get-started {
+        height: 2.5rem;
+        width: 8rem;
+        font-size: 1rem;
+    }
+
+    .services-text {
+        font-size: 2.5rem;
+    }
+}
