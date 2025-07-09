@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedAssist</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylemain.css">
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="med_chatbot/chat.css" class="css">
+    <link rel="stylesheet" href="VideocallF/style2.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
@@ -31,9 +32,11 @@
 
         <div class="main1body">
             <div class="Log">
-                <button onclick="window.location.href='logg/index1.html'" class="login mainbutton">Login</button>
-                <button onclick="window.location.href='logg/index2.html'" class="signup mainbutton">Sign-up</button>
+                <a href="logg/index1.html" target="_blank"><button class="login mainbutton">Login</button></a>
+                <a href="logg/index2.html" target="_blank"><button class="signup mainbutton">Sign-up</button></a>
+                <!-- <button id="logoutBtn" class="mainbutton"">Logout</button> -->
             </div>
+
             <div class="bg-overlay"></div>
             <div class="textcontent">
                 <div class="line2">Welcome</div>
@@ -41,8 +44,8 @@
                 </div>
             </div>
 
-            <button class="Nbutton left" onclick="prevImage()"><-< /button>
-                    <button class="Nbutton right" onclick="nextImage()">-></button>
+            <button class="Nbutton left" onclick="prevImage()">🢀</button>
+            <button class="Nbutton right" onclick="nextImage()">🢂</button>
         </div>
 
     </div>
@@ -77,7 +80,7 @@
         <div class="ai-container">
             <h1 class="ai-title">Med AI</h1>
             <p class="ai-subtitle">How can I help you today?</p>
-            
+
             <div class="chat-history" id="chat-history">
                 <div class="message ai">Hello! Ask me about your medical queries.</div>
             </div>
@@ -125,8 +128,23 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="main5">
+        <div class="main5-title">
+            <h1>One on One Call with our Doctors</h1>
+            <button id="joinBtn">Create & Join Call</button>
+        </div>
+        <div id="videoContainer">
+        </div>
+    </div>
+
+    <div class="main6">
+        <h2>Your Content</h2>
+    </div>
+
+    <script src="scriptmain.js"></script>
     <script src="med_chatbot/script.js"></script>
+
+    <script src="VideocallF/node.js"></script>
 </body>
 
 </html>
