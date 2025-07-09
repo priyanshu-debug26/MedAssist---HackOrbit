@@ -47,11 +47,9 @@ async function sendMessage() {
     });
 
     try {
-        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        const response = await fetch("med_chatbot/api/chat", {
             method: "POST",
             headers: {
-                "Authorization": "Bearer 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", 
-                "X-Title": "Modern Med AI",                
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
@@ -61,6 +59,7 @@ async function sendMessage() {
                 max_tokens: 2000
             })
         });
+
 
         if (!response.ok) {
             const errorData = await response.json();
