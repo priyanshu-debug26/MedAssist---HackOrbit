@@ -12,6 +12,10 @@ body {
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .main1 {
     height: 100vh;
     width: 100vw;
@@ -470,6 +474,10 @@ body {
     }
 }
 
+.getS{
+    text-decoration: none;
+    color: white;
+}
 
 .subscription-section {
   height: 50vh;
