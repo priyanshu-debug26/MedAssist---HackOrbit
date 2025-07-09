@@ -3,30 +3,22 @@ const userInput = document.getElementById('input');
 const sendButton = document.getElementById('send-button');
 const loadingIndicator = document.getElementById('loading-indicator');
 
-let conversationHistory = [];
+let conversationHistory = [
+    { role: "system", content: "You are a helpful AI doctor." }
+];
 
 function appendMessage(sender, text) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', sender);
-    messageElement.innerHTML = marked.parse(text);  
+    messageElement.innerHTML = marked.parse(text); 
     chatHistory.appendChild(messageElement);
-    chatHistory.scrollTo({
-    top: chatHistory.scrollHeight,
-    behavior: "smooth"
-});
-
+    chatHistory.scrollTo({ top: chatHistory.scrollHeight, behavior: "smooth" });
 }
-
-
 
 function autoExpandTextarea() {
     userInput.style.height = 'auto';
     userInput.style.height = userInput.scrollHeight + 'px';
-    if (userInput.scrollHeight > 120) {
-        userInput.style.overflowY = 'auto';
-    } else {
-        userInput.style.overflowY = 'hidden';
-    }
+    userInput.style.overflowY = userInput.scrollHeight > 120 ? 'auto' : 'hidden';
 }
 
 async function sendMessage() {
@@ -41,48 +33,29 @@ async function sendMessage() {
     userInput.disabled = true;
     loadingIndicator.style.visibility = 'visible';
 
-    conversationHistory.push({
-        role: 'user',
-        content: userMessage
-    });
+    conversationHistory.push({ role: 'user', content: userMessage });
 
     try {
-        const response = await fetch("/med_chatbot/api/chat", {
+        const response = await fetch("/api/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                model: "deepseek/deepseek-chat:free",
-                messages: conversationHistory,
-                temperature: 0.7,
-                max_tokens: 2000
+                messages: conversationHistory
             })
         });
 
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('API Error:', errorData);
-            throw new Error(errorData.message || `Error: ${response.status}`);
-        }
-
         const data = await response.json();
+        if (!response.ok) throw new Error(data.message || `Error ${response.status}`);
 
-        if (data.choices && data.choices.length > 0 && data.choices[0].message && data.choices[0].message.content) {
-            const aiReply = data.choices[0].message.content;
-            appendMessage('ai', aiReply);
-            conversationHistory.push({
-                role: 'assistant',
-                content: aiReply
-            });
-        } else {
-            appendMessage('ai', "I'm not sure how to respond. Try again.");
-        }
+        const aiReply = data.choices[0].message.content;
+        appendMessage('ai', aiReply); 
+        conversationHistory.push({ role: 'assistant', content: aiReply });
 
     } catch (error) {
-        console.error('Fetch error:', error);
-        appendMessage('ai', `Error: ${error.message || 'Failed to connect to AI.'}`);
+        console.error(error);
+        appendMessage('ai', `Error: ${error.message}`);
     } finally {
         sendButton.disabled = false;
         userInput.disabled = false;
@@ -92,13 +65,11 @@ async function sendMessage() {
 }
 
 sendButton.addEventListener('click', sendMessage);
-
 userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         sendMessage();
     }
 });
-
 userInput.addEventListener('input', autoExpandTextarea);
 autoExpandTextarea();

@@ -50,7 +50,7 @@ function fetchNearbyPlaces(lat, lon) {
               routeLayer = null;
             }
           } else {
-            showSidebar({ name, address });
+            showSidebar({  name, address });
             drawRoute(userLat, userLon, coords[1], coords[0]);
             openMarker = marker;
           }
